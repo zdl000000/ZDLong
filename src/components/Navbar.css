@@ -1,0 +1,136 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-scrolled {
+  padding: 14px 0;
+  background: rgba(8, 8, 10, 0.9);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.navbar-logo:hover {
+  color: var(--accent);
+}
+
+.navbar-logo span {
+  color: var(--accent);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.navbar-menu li a {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.navbar-menu li a:hover {
+  color: var(--text-primary);
+}
+
+.navbar-menu li a::before {
+  content: '//';
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.navbar-menu li a:hover::before {
+  opacity: 1;
+}
+
+.navbar-contact-btn {
+  font-family: var(--font-display) !important;
+  font-size: 12px !important;
+  padding: 7px 16px !important;
+  border: 1px solid var(--border-default) !important;
+  border-radius: 0 !important;
+  color: var(--accent) !important;
+  transition: all 0.2s !important;
+  letter-spacing: 0.5px;
+}
+
+.navbar-contact-btn:hover {
+  background: var(--accent-dim) !important;
+  border-color: var(--accent) !important;
+}
+
+.navbar-contact-btn::before {
+  content: '> ';  /* cursor-like prefix */
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text-primary);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 240px;
+    height: 100vh;
+    flex-direction: column;
+    background: var(--bg-base);
+    padding: 80px 28px 32px;
+    gap: 20px;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 1px solid var(--border-subtle);
+  }
+
+  .navbar-menu.open {
+    right: 0;
+  }
+}

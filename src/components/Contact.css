@@ -1,0 +1,130 @@
+.contact-section {
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border-subtle);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-container {
+  width: 100%;
+  padding: 100px 0 64px;
+}
+
+.contact-top {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.contact-top h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+  color: var(--text-hero);
+  line-height: 1.1;
+}
+
+.contact-top h2 .highlight {
+  color: var(--accent);
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--border-subtle);
+}
+
+.contact-method-card {
+  background: var(--bg-code);
+  padding: 36px 24px;
+  text-align: center;
+  transition: all 0.25s;
+  cursor: pointer;
+  position: relative;
+}
+
+.contact-method-card:hover {
+  background: var(--bg-elevated);
+}
+
+.contact-method-card::before {
+  content: attr(data-index);
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  color: var(--accent);
+}
+
+.method-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.method-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.method-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.contact-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 72px 0 32px;
+}
+
+.copyright {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+  .contact-methods {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .contact-container {
+    padding: 72px 0 48px;
+  }
+}
+

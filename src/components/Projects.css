@@ -1,0 +1,152 @@
+.projects-section {
+  background: var(--bg-deep);
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.project-card {
+  background: var(--bg-code);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.project-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-elevated);
+}
+
+.project-image {
+  height: 180px;
+  background: var(--bg-base);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tab bar decoration on project image */
+.project-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: var(--bg-code);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.project-image::after {
+  content: '\25cf \25cf \25cf';
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  font-size: 8px;
+  letter-spacing: 6px;
+  color: var(--text-dim);
+  z-index: 1;
+}
+
+.project-icon-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.project-icon-wrap svg {
+  width: 56px;
+  height: 56px;
+  opacity: 0.35;
+  transition: all 0.3s;
+}
+
+.project-card:hover .project-icon-wrap svg {
+  opacity: 0.6;
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 24px 28px;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+.project-header h3 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.project-tag {
+  font-family: var(--font-display);
+  font-size: 11px;
+  padding: 3px 10px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-badge {
+  font-family: var(--font-display);
+  font-size: 11px;
+  padding: 3px 8px;
+  background: var(--bg-base);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+
+.tech-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+@media (max-width: 1024px) {
+  .project-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .project-info {
+    padding: 20px;
+  }
+  .project-image {
+    height: 130px;
+  }
+}
+
+
